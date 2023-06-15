@@ -8,3 +8,4 @@
 <hr>
 
 ## Desenvolvimento da criação da Cena
+<img src='img/cena.png' />
