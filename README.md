@@ -59,6 +59,9 @@
 <p>Por fim um chamado "MovimentoPlayer" que é o mais complexo, nele tem a movimentação do carro que ao aperta "W" ele vai para frente, e ao apertar "S" ele vai para trás. Junto possui a inclinação do carro que faz com que ele descapote inclinando para direita com a tecla "D" ou inclinando para esquerda com a tecla "A". E também o script de tamanho com o scroll do mouse que ao rolar para cima o carro cresce e para baixo o carro diminui, foi necessário colocar o de tamanho e de movimento juntos, pois no final do script foi feito uma lógica para que se o carro ficasse pequeno a velocidade dele ficaria menor.</p>
 
 #### Explicação mais detalhada de cada script:
-##### Script MovimentacaoPedra
 <img src='img/movimentopedra.png' />
 <br>
+<dl>
+<dt>Script de <b>>movimentação da pedra:</dt> 
+<dd>A variável velocidade é usada para definir a velocidade de movimento da pedra. Quanto maior o valor da velocidade, mais rápido a pedra se moverá. Dentro do método Update, que é chamado a cada quadro, temos o código responsável por mover a esfera para frente. A função transform.Translate é utilizada para realizar o deslocamento do objeto. "Vector3.forward" é um vetor que representa a direção para a frente no espaço tridimensional do Unity. Multiplicando esse vetor pela velocidade e pelo Time.deltaTime, garantimos que o movimento seja suave e independente da taxa de quadros.</dd>
+</dl>
