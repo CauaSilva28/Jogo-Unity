@@ -65,15 +65,18 @@ https://drive.google.com/file/d/1wxk1mJCovWtCaSKyqWLTAIeoOEUvWlcu/view?usp=shari
 ### Explicação mais detalhada de cada script:
 <dl>
     <dt>Script de <b>movimentação da pedra</b>:</dt>
+    <br>
         <img src='img/movimentopedra.png' />
+    <br>
         <br>
         <dd>A variável velocidade é usada para definir a velocidade de movimento da pedra. Quanto maior o valor da velocidade, mais rápido a pedra ira se mover. Dentro do método Update, que é chamado a cada quadro, temos o código responsável por mover a pedra para frente. A função transform.Translate é utilizada para realizar o deslocamento do objeto. "Vector3.forward" é um vetor que representa a direção para a frente no espaço tridimensional do Unity. Multiplicando esse vetor pela velocidade e pelo Time.deltaTime, garantimos que o movimento seja suave e independente da taxa de quadros.</dd>
 </dl>
 <br>
 <dl>
     <dt>Script de <b>rotação do player</b>:</dt>
+    <br>
         <img src='img/rotacao.png' />
-        <br>
+    <br>
         <dd>A variável veloRotacao é usada para definir a velocidade de rotação do objeto. Quanto maior o valor da velocidade de rotação, mais rápido o objeto irá girar. Dentro do método Update, temos o código responsável por obter a entrada do movimento do mouse na horizontal (Mouse X). A função Input.GetAxis é utilizada para obter o valor da entrada do movimento do mouse na direção horizontal. Em seguida, utilizamos a função transform.Rotate para rotacionar o objeto em torno do eixo vertical Y (Vector3.up). O valor obtido da entrada do movimento do mouse (mouseX) é multiplicado pela velocidade de rotação (veloRotacao), determinando a direção da rotação.</dd>
 </dl>
 <br>
@@ -90,7 +93,9 @@ https://drive.google.com/file/d/1wxk1mJCovWtCaSKyqWLTAIeoOEUvWlcu/view?usp=shari
             <dd> A variável velocidadeZoom define a velocidade com que o objeto muda seu tamanho quando o scroll do mouse é girado. As variáveis tamanhoMinimo e tamanhoMaximo definem os valores mínimo e máximo para o tamanho do objeto. Usamos Input.mouseScrollDelta.y para obter o valor do movimento do scroll do mouse. Multiplicamos esse valor pela velocidadeZoom e atualizamos o tamanho do objeto usando transform.localScale. Limitamos o tamanho do objeto entre tamanhoMinimo e tamanhoMaximo usando Mathf.Clamp.</dd>
         <p>No final foi utilizado um if e else para que se o tamanho do carro for menor que 2f, a velocidade dele irá diminuir, senao a velocidade será normal.</p>
 </dl>
-<br>
+
+<hr>
+
 <p>Ao deixar as variáveis como public conseguimos alterar o valor que está na variavel dentro do projeto no unity ficando assim:</p>
 <img src='img/variaveispublic.png' />
 <br>
