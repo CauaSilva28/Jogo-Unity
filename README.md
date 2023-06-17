@@ -43,6 +43,7 @@
 ### Box Collider, Sphere Collider e RigidBody
 <h4>Exemplo:</h4>
 <img src='img/exemplo.png' />
+<img src='img/exemplo2.png' />
 <br><br>
 <p>O box collider foi adicionado nos pisos, no carro(personagem), nos obstáculos e nas laterais e paredes "invisíveis". Ele foi adicionado com a função de fazer com que os objetos não se atravessem, como esse será um jogo onde o carro deverá desviar dos obstáculos enquanto é perseguido por uma pedra, o box collider é essencial. Como mostra a imagem, o box collider é uma caixa de colisão em volta do objeto. Já o sphere collider, como diz o nome, serve para objetos redondos e é uma esfera em volta do objeto, e foi adicionada em todas as sphere adicionadas na cena, mas a principal é a pedra que persegue o carro.</p> 
 
