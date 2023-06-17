@@ -1,7 +1,10 @@
 # Explicando a cena 3D feita no Unity
 
+## Link do projeto
+https://drive.google.com/file/d/1wxk1mJCovWtCaSKyqWLTAIeoOEUvWlcu/view?usp=sharing
+
 ## Sobre a Cena
-<p><b>Cena feita por: Cauã Silva e Carlos Alarcon.<b></p>
+<p><b>Cena feita por: Cauã Silva e Carlos Alarcon.</b></p>
 <p>A cena se baseia em um carro que deve fugir de uma pedra que está rolando em sua direção, porém não é tão simples, o carro precisa desviar de diversos obstáculos indo para os lados, diminuindo seu tamanho e tomando cuidado para não capotar. No final, o carro irá visualizar uma virada que servirá para ele desviar da pedra, assim sobrevivendo e vendo a pedra passar reto. O jogador irá controlar o carro, suas mecânicas são:</p>
 <img src='img/comando.png' />
 
@@ -53,15 +56,49 @@
 
 ### Scripts
 <img src='img/scripts.png' />
-<br>
-<p>Foram criados 3 scripts, um chamado "MovimentoPedra" que faz a pedra se movimentar sozinha em uma direção.</p> 
-<p>Outro chamado "RotacaoPlayer" que rotaciona o carro no eixo Y ao mover o mouse para direito ou esquerda.</p>
-<p>Por fim um chamado "MovimentoPlayer" que é o mais complexo, nele tem a movimentação do carro que ao aperta "W" ele vai para frente, e ao apertar "S" ele vai para trás. Junto possui a inclinação do carro que faz com que ele descapote inclinando para direita com a tecla "D" ou inclinando para esquerda com a tecla "A". E também o script de tamanho com o scroll do mouse que ao rolar para cima o carro cresce e para baixo o carro diminui, foi necessário colocar o de tamanho e de movimento juntos, pois no final do script foi feito uma lógica para que se o carro ficasse pequeno a velocidade dele ficaria menor.</p>
+<br><br>
+<p>Foram criados 3 scripts, um chamado "MovimentoPedra" que faz a pedra se movimentar sozinha para frente.</p> 
+<p>Outro chamado "RotacaoPlayer" que rotaciona o carro no eixo Y ao mover o mouse para direita ou esquerda.</p>
+<p>Por fim um chamado "MovimentoPlayer" que é o mais complexo, nele possui o movimento do carro, o descapotamento (inclinação para direita ou esquerda) e a função que faz com que o carro mude de tamanho. Foi necessário colocar o de tamanho e de movimento juntos, pois no final do script foi feito uma lógica para que se o carro ficasse pequeno a velocidade dele ficaria menor. </p>
 
 #### Explicação mais detalhada de cada script:
-<img src='img/movimentopedra.png' />
+<dl>
+    <dt>Script de <b>movimentação da pedra</b>:</dt>
+        <img src='img/movimentopedra.png' />
+        <br>
+        <dd>A variável velocidade é usada para definir a velocidade de movimento da pedra. Quanto maior o valor da velocidade, mais rápido a pedra ira se mover. Dentro do método Update, que é chamado a cada quadro, temos o código responsável por mover a pedra para frente. A função transform.Translate é utilizada para realizar o deslocamento do objeto. "Vector3.forward" é um vetor que representa a direção para a frente no espaço tridimensional do Unity. Multiplicando esse vetor pela velocidade e pelo Time.deltaTime, garantimos que o movimento seja suave e independente da taxa de quadros.</dd>
+</dl>
 <br>
 <dl>
-<dt>Script de <b>>movimentação da pedra:</dt> 
-<dd>A variável velocidade é usada para definir a velocidade de movimento da pedra. Quanto maior o valor da velocidade, mais rápido a pedra se moverá. Dentro do método Update, que é chamado a cada quadro, temos o código responsável por mover a esfera para frente. A função transform.Translate é utilizada para realizar o deslocamento do objeto. "Vector3.forward" é um vetor que representa a direção para a frente no espaço tridimensional do Unity. Multiplicando esse vetor pela velocidade e pelo Time.deltaTime, garantimos que o movimento seja suave e independente da taxa de quadros.</dd>
+    <dt>Script de <b>rotação do player</b>:</dt>
+        <img src='img/rotacao.png' />
+        <br>
+        <dd>A variável veloRotacao é usada para definir a velocidade de rotação do objeto. Quanto maior o valor da velocidade de rotação, mais rápido o objeto irá girar. Dentro do método Update, temos o código responsável por obter a entrada do movimento do mouse na horizontal (Mouse X). A função Input.GetAxis é utilizada para obter o valor da entrada do movimento do mouse na direção horizontal. Em seguida, utilizamos a função transform.Rotate para rotacionar o objeto em torno do eixo vertical Y (Vector3.up). O valor obtido da entrada do movimento do mouse (mouseX) é multiplicado pela velocidade de rotação (veloRotacao), determinando a direção da rotação.</dd>
 </dl>
+<br>
+<dl>
+    <dt>Script player:</dt>
+        <img src='img/movimentoplayer.png' />
+        <br>
+        <dt>Método Start</dt>
+            <dd>Dentro do método Start, é utilizado um código que faz com que bloqueie o cursor do mouse, fazendo assim com que ele não fique aparecendo ao inciar a cena.</dd>
+        <br>
+        <dt>Script de <b>movimentação do carro</b>:</dt>
+            <dd>A variável velocidade é utilizada para definir a velocidade de movimento do carro. Usamos a função Input.GetAxis para obter a entrada do movimento vertical e, em seguida, calculamos o vetor de movimento multiplicando a direção para frente do objeto (transform.forward) pelo valor de moveInput, a velocidade e Time.deltaTime. Em seguida, usamos "transform.position += movement" para atualizar a posição do objeto de acordo com o vetor de movimento. W irá fazer o carro ir para frente e S irá fazer o carro ir para trás, pois é o padrão do unity.</dd>
+        <br>
+        <dt>Script de <b>inclinação do carro</b>:</dt>
+            <dd>A variável velodesvio é utilizada para definir a velocidade de rotação do carro no eixo Z. Foram utilizados if e else para que se a tecla apertada for "A", o carro irá inclinar para esquerda, e se a tecla apertada for "D" o carro irá inclinar para direita.</dd>
+        <br>
+        <dt>Script de <b>tamanho do carro</b>:</dt>
+            <dd> A variável velocidadeZoom define a velocidade com que o objeto muda seu tamanho quando o scroll do mouse é girado. As variáveis tamanhoMinimo e tamanhoMaximo definem os valores mínimo e máximo para o tamanho do objeto. Usamos Input.mouseScrollDelta.y para obter o valor do movimento do scroll do mouse. Multiplicamos esse valor pela velocidadeZoom e atualizamos o tamanho do objeto usando transform.localScale. Limitamos o tamanho do objeto entre tamanhoMinimo e tamanhoMaximo usando Mathf.Clamp.</dd>
+        <br>
+        <p>No final foi utilizado um if e else para que se o tamanho do carro for menor que 2f, a velocidade dele irá diminuir, senao a velocidade será normal.</p>
+</dl>
+<br>
+<p>Ao deixar as variáveis como public conseguimos alterar o valor que está na variavel dentro do projeto no unity ficando assim:</p>
+<img src='img/variaveispublic.png' />
+<br>
+<p>Todas as variáveis utilizadas são do tipo float, que permite o valor ter casas depois da vírgula, por exemplo: 4.50, 2.00, 10.5687.</p>
+
+## Mostrando a cena
+<video source src="video/gameplay.mp4" controls></video>
