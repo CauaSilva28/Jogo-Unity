@@ -41,14 +41,24 @@
 <hr>
 
 ### Box Collider, Sphere Collider e RigidBody
-<h4>Exemplo:</h4>
+#### Exemplo:
 <img src='img/exemplo.png' />
 <img src='img/exemplo2.png' />
 <br><br>
 <p>O box collider foi adicionado nos pisos, no carro(personagem), nos obstáculos e nas laterais e paredes "invisíveis". Ele foi adicionado com a função de fazer com que os objetos não se atravessem, como esse será um jogo onde o carro deverá desviar dos obstáculos enquanto é perseguido por uma pedra, o box collider é essencial. Como mostra a imagem, o box collider é uma caixa de colisão em volta do objeto. Já o sphere collider, como diz o nome, serve para objetos redondos e é uma esfera em volta do objeto, e foi adicionada em todas as sphere adicionadas na cena, mas a principal é a pedra que persegue o carro.</p> 
 
-<p>O RigidBody serve para adicionar os conceitos de física à determinado objeto. Ele foi adicionado ao carro(personagem) e aos obstáculos fazendo assim com que consigam colidir e que fiquem parecidos com a realidade. O único elemento alterado no RigidBody foi o Mass que é a massa do objeto, colocamos uma massa baixa para o carro e uma massa alta para os obstáculos, fazendo com que o carro bata nele e pare.</p>
+<p>O RigidBody serve para adicionar os conceitos de física à determinado objeto. Ele foi adicionado ao carro(personagem) e aos obstáculos fazendo assim com que consigam colidir e que fiquem parecidos com a realidade. O único elemento alterado no RigidBody foi o Mass que é a massa do objeto, colocamos uma massa baixa para o carro e uma massa alta para os obstáculos.</p>
 
 <hr>
 
 ### Scripts
+<img src='img/scripts.png' />
+<br>
+<p>Foram criados 3 scripts, um chamado "MovimentoPedra" que faz a pedra se movimentar sozinha em uma direção.</p> 
+<p>Outro chamado "RotacaoPlayer" que rotaciona o carro no eixo Y ao mover o mouse para direito ou esquerda.</p>
+<p>Por fim um chamado "MovimentoPlayer" que é o mais complexo, nele tem a movimentação do carro que ao aperta "W" ele vai para frente, e ao apertar "S" ele vai para trás. Junto possui a inclinação do carro que faz com que ele descapote inclinando para direita com a tecla "D" ou inclinando para esquerda com a tecla "A". E também o script de tamanho com o scroll do mouse que ao rolar para cima o carro cresce e para baixo o carro diminui, foi necessário colocar o de tamanho e de movimento juntos, pois no final do script foi feito uma lógica para que se o carro ficasse pequeno a velocidade dele ficaria menor.</p>
+
+#### Explicação mais detalhada de cada script:
+##### Script MovimentacaoPedra
+<img src='img/movimentopedra.png' />
+<br>
