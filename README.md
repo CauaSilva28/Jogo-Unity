@@ -101,4 +101,3 @@ https://drive.google.com/file/d/1wxk1mJCovWtCaSKyqWLTAIeoOEUvWlcu/view?usp=shari
 <p>Todas as variáveis utilizadas são do tipo float, que permite o valor ter casas depois da vírgula, por exemplo: 4.50, 2.00, 10.5687.</p>
 
 ## Mostrando a cena
-<video src="video/MostrandoCena.mp4" controls title="Title"></video>
