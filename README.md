@@ -76,7 +76,7 @@ https://drive.google.com/file/d/1wxk1mJCovWtCaSKyqWLTAIeoOEUvWlcu/view?usp=shari
     <dt>Script de <b>rotação do player</b>:</dt>
     <br>
         <img src='img/rotacao.png' />
-    <br>
+    <br><br>
         <dd>A variável veloRotacao é usada para definir a velocidade de rotação do objeto. Quanto maior o valor da velocidade de rotação, mais rápido o objeto irá girar. Dentro do método Update, temos o código responsável por obter a entrada do movimento do mouse na horizontal (Mouse X). A função Input.GetAxis é utilizada para obter o valor da entrada do movimento do mouse na direção horizontal. Em seguida, utilizamos a função transform.Rotate para rotacionar o objeto em torno do eixo vertical Y (Vector3.up). O valor obtido da entrada do movimento do mouse (mouseX) é multiplicado pela velocidade de rotação (veloRotacao), determinando a direção da rotação.</dd>
 </dl>
 <br>
@@ -98,8 +98,7 @@ https://drive.google.com/file/d/1wxk1mJCovWtCaSKyqWLTAIeoOEUvWlcu/view?usp=shari
 
 <p>Ao deixar as variáveis como public conseguimos alterar o valor que está na variavel dentro do projeto no unity ficando assim:</p>
 <img src='img/variaveispublic.png' />
-<br>
 <p>Todas as variáveis utilizadas são do tipo float, que permite o valor ter casas depois da vírgula, por exemplo: 4.50, 2.00, 10.5687.</p>
 
 ## Mostrando a cena
-<video source src="video/gameplay.mp4" width="600px" height="400px" controls></video>
+<video source src='video/gameplay.mp4' width='600px' height='400px' controls></video>
